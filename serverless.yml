@@ -1,0 +1,20 @@
+service: my-express-application
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: us-east-1
+
+functions:
+  app:
+    handler: src/serverless.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
+    healtcheck:
+      handler: src/serverless.handler
+      events:
+        - http: 'GET /healtcheck'
+plugins:
+  - serverless-offline
