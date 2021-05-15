@@ -16,6 +16,11 @@ functions:
     handler: src/serverless.handler
     events:
       - http: 'GET /healtcheck'
+  counter:
+    handler: src/serverless.handler
+    events:
+      - http: 'GET /counter'
+      - http: 'POST /counter'
 plugins:
   - serverless-offline
   - serverless-dotenv-plugin
