@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "sls offline start",
     "test:unit": "jest",
     "test:unit:dev": "jest --watchAll",
     "test:functional": "jest --projects ./test --runInBand",
@@ -27,11 +28,13 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.2",
     "jest": "^26.6.3",
+    "serverless-offline": "^7.0.0",
     "supertest": "^6.1.3"
   },
   "dependencies": {
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "serverless-http": "^2.7.0"
   }
 }
