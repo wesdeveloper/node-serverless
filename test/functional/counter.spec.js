@@ -16,7 +16,7 @@ describe('Counter Routes', () => {
         .reply(200);
 
       const response = await global.request.post('/counter');
-      expect(response.status).toBe(200);
+      expect(response.status).toBe(201);
     });
   });
 
