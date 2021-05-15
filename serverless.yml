@@ -18,3 +18,4 @@ functions:
       - http: 'GET /healtcheck'
 plugins:
   - serverless-offline
+  - serverless-dotenv-plugin

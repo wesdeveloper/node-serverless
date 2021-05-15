@@ -8,6 +8,7 @@ module.exports = {
   ...rootConfig,
   rootDir: root,
   displayName: 'Functional tests',
+  setupFiles: ['dotenv/config'],
   setupFilesAfterEnv: ['<rootDir>/test/jest-setup.js'],
   testMatch: ['<rootDir>/test/**/*.spec.js'],
 };
