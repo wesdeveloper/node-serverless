@@ -12,9 +12,9 @@ functions:
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
-    healtcheck:
-      handler: src/serverless.handler
-      events:
-        - http: 'GET /healtcheck'
+  healtcheck:
+    handler: src/serverless.handler
+    events:
+      - http: 'GET /healtcheck'
 plugins:
   - serverless-offline
