@@ -11,4 +11,14 @@ const increment = async () => {
   return axios.get(countApiIncrementRoute);
 };
 
-module.exports = { increment };
+const getAmount = async () => {
+  const countApiGetAmountRoute = `${COUNT_API_HOST}/get/${COUNT_API_NAMESPACE}/${COUNT_API_KEY}`;
+  return axios
+    .get(countApiGetAmountRoute)
+    .then(response => response.data);
+};
+
+module.exports = {
+  increment,
+  getAmount,
+};
