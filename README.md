@@ -26,6 +26,11 @@ Install all dependencies:
 npm install
 ```
 
+Now you can start the serverless in local mode:
+```
+npm start
+```
+
 ### TESTS
 
 To run all tests just run npm test command:
