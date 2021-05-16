@@ -19,8 +19,11 @@ const usersModel = () => {
     return user.save();
   };
 
+  const getAll = async () => User.find();
+
   return {
     create,
+    getAll,
   };
 };
 

@@ -31,4 +31,14 @@ describe('Users Routes', () => {
       });
     });
   });
+
+  describe('Get all users route', () => {
+    it('Should make an request to get all users and receive status code 200', async () => {
+      const response = await global.request
+        .get('/users');
+
+      expect(response.status).toBe(200);
+      expect(response.body).not.toBeNull();
+    });
+  });
 });

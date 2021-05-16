@@ -8,7 +8,8 @@ const userRoutes = (router) => {
       '/users',
       validateBody(usersValidationSchemas.createUser),
       usersController.create,
-    );
+    )
+    .get('/users', usersController.getAllUsers);
 };
 
 module.exports = userRoutes;
