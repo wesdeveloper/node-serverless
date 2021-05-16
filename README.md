@@ -33,12 +33,6 @@ npm start
 
 ### TESTS
 
-To run all tests just run npm test command:
-```
-npm test
-
-```
-
 To run functional tests just run npm test:functional command:
 ```
 npm test:functional
@@ -49,7 +43,7 @@ npm test:functional
 
 * [Express](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
 
-* [DynamoDb](https://www.mongodb.com/) - Amazon DynamoDB is a fully managed proprietary NoSQL database service that supports key–value and document data structures[2] and is offered by Amazon.com as part of the Amazon Web Services portfolio.
+* [MongoDB](https://www.mongodb.com/) - MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling.
 
 * [Supertest](https://github.com/visionmedia/supertest#readme) - HTTP assertions made easy via superagent..
 
