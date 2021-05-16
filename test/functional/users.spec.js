@@ -32,13 +32,37 @@ describe('Users Routes', () => {
     });
   });
 
-  describe('Get all users route', () => {
-    it('Should make an request to get all users and receive status code 200', async () => {
+  describe('Get an user by id route', () => {
+    it('Should make an request to get an user by id and receive status code 200', async () => {
+      const userMockData = usersFixtures.generateUserMock();
+      const { body: createdUser } = await global.request
+        .post('/users')
+        .send(userMockData);
+
       const response = await global.request
-        .get('/users');
+        .get(`/users/${createdUser._id}`);
 
       expect(response.status).toBe(200);
-      expect(response.body).not.toBeNull();
+      expect(response.body).toEqual(createdUser);
     });
+  });
+
+  describe('Validations cases', () => {
+    it('Should make an request to get a user that does not exist and receive status code 404', async () => {
+      const response = await global.request
+        .get('/users/60a15e0d1337316aad5d87bf');
+
+      expect(response.status).toBe(404);
+    });
+  });
+});
+
+describe('Get all users route', () => {
+  it('Should make an request to get all users and receive status code 200', async () => {
+    const response = await global.request
+      .get('/users');
+
+    expect(response.status).toBe(200);
+    expect(response.body).not.toBeNull();
   });
 });

@@ -21,9 +21,12 @@ const usersModel = () => {
 
   const getAll = async () => User.find();
 
+  const getById = userId => User.findById(userId);
+
   return {
     create,
     getAll,
+    getById,
   };
 };
 

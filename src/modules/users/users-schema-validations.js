@@ -1,5 +1,7 @@
 const Joi = require('joi');
 
+const id = Joi.string();
+
 const createUser = Joi.object().keys({
   name: Joi.string().required(),
   lastName: Joi.string().required(),
@@ -8,4 +10,5 @@ const createUser = Joi.object().keys({
 
 module.exports = {
   createUser,
+  id,
 };

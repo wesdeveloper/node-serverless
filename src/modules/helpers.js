@@ -12,7 +12,7 @@ const validateOptions = {
  * @param {*} name - Name of the value that needs to match with the schema.
  */
 const validateParam = (schema, name) => (req, res, next) => {
-  const result = Joi.validate({ [name]: req.params[name] }, schema);
+  const result = schema.validate(req.params[name]);
   if (result.error) {
     return res.status(400).json(result.error);
   }
