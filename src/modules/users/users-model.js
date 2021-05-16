@@ -24,6 +24,7 @@ const usersModel = () => {
   const getById = userId => User.findById(userId);
 
   return {
+    User,
     create,
     getAll,
     getById,

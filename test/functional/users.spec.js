@@ -1,6 +1,8 @@
 const { usersFixtures } = require('../fixtures');
+const { User } = require('../../src/modules/users/users-model');
 
 describe('Users Routes', () => {
+  afterEach(async () => User.deleteMany());
   describe('Create user route', () => {
     it('Should make an request to create a new user and receive status code 201', async () => {
       const userMockData = usersFixtures.generateUserMock();
