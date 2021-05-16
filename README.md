@@ -26,6 +26,11 @@ Install all dependencies:
 npm install
 ```
 
+Set environment variables, and set the correct values:
+```
+cp .env.example .env
+```
+
 Now you can start the serverless in local mode:
 ```
 npm start
