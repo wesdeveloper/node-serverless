@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
+require('express-async-errors');
 
 const { logger } = require('./config');
 const healthcheckRoutes = require('./modules/healtcheck/healthcheck-routes');

@@ -5,38 +5,26 @@ const usersService = require('./users-service');
 const UsersRepository = usersRepositrequire(UserModel);
 const UsersService = usersService(UsersRepository);
 
-const create = async (req, res, next) => {
-  try {
-    const { body } = req;
-    const user = await UsersService.create(body);
-    return res.status(201).send(user);
-  } catch (e) {
-    return next(e);
-  }
+const create = async (req, res) => {
+  const { body } = req;
+  const user = await UsersService.create(body);
+  return res.status(201).send(user);
 };
 
-const getUserById = async (req, res, next) => {
-  try {
-    const { userId } = req.params;
-    const user = await UsersService.getUserById(userId);
+const getUserById = async (req, res) => {
+  const { userId } = req.params;
+  const user = await UsersService.getUserById(userId);
 
-    if (!user) {
-      return res.status(404).send();
-    }
-
-    return res.send(user);
-  } catch (e) {
-    return next(e);
+  if (!user) {
+    return res.status(404).send();
   }
+
+  return res.send(user);
 };
 
-const getAllUsers = async (_, res, next) => {
-  try {
-    const users = await UsersService.getAllUsers();
-    return res.status(200).send(users);
-  } catch (e) {
-    return next(e);
-  }
+const getAllUsers = async (_, res) => {
+  const users = await UsersService.getAllUsers();
+  return res.status(200).send(users);
 };
 
 module.exports = {
