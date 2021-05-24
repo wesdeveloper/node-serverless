@@ -1,7 +1,9 @@
-const usersRepository = require('./users-repository');
+const UserModel = require('./users-model');
+const usersRepositrequire = require('./users-repository');
 const usersService = require('./users-service');
 
-const UsersService = usersService(usersRepository);
+const UsersRepository = usersRepositrequire(UserModel);
+const UsersService = usersService(UsersRepository);
 
 const create = async (req, res, next) => {
   try {

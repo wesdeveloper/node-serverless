@@ -1,34 +1,18 @@
-const mongoose = require('mongoose');
-
-const UserSchema = mongoose.Schema(
-  {
-    name: String,
-    lastName: String,
-    email: String,
-  },
-  {
-    timestamps: true,
-  },
-);
-
-const User = mongoose.model('User', UserSchema);
-
-const usersModel = () => {
+const usersModel = (UserModel) => {
   const create = async (data) => {
-    const user = new User({ ...data });
+    const user = new UserModel({ ...data });
     return user.save();
   };
 
-  const getAll = async () => User.find();
+  const getAll = async () => UserModel.find();
 
-  const getById = userId => User.findById(userId);
+  const getById = userId => UserModel.findById(userId);
 
   return {
-    User,
     create,
     getAll,
     getById,
   };
 };
 
-module.exports = usersModel();
+module.exports = usersModel;

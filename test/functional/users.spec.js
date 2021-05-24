@@ -1,5 +1,5 @@
 const { usersFixtures } = require('../fixtures');
-const { User } = require('../../src/modules/users/users-repository');
+const User = require('../../src/modules/users/users-model');
 
 describe('Users Routes', () => {
   afterEach(async () => User.deleteMany());
