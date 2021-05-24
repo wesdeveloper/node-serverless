@@ -1,13 +1,15 @@
-const usersModel = require('./users-model');
+const usersService = (usersRepository) => {
+  const create = async (data) => usersRepository.create(data);
 
-const create = async (data) => usersModel.create(data);
+  const getUserById = async (userId) => usersRepository.getById(userId);
 
-const getUserById = async (userId) => usersModel.getById(userId);
+  const getAllUsers = async () => usersRepository.getAll();
 
-const getAllUsers = async () => usersModel.getAll();
-
-module.exports = {
-  create,
-  getUserById,
-  getAllUsers,
+  return {
+    create,
+    getUserById,
+    getAllUsers,
+  };
 };
+
+module.exports = usersService;

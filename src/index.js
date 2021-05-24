@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 
+const { logger } = require('./config');
 const healthcheckRoutes = require('./modules/healtcheck/healthcheck-routes');
 const counterRoutes = require('./modules/counter/counter-routes');
 const usersRoutes = require('./modules/users/users-routes');
@@ -18,5 +19,11 @@ app.use(express.urlencoded({ extended: true }));
 healthcheckRoutes(app);
 counterRoutes(app);
 usersRoutes(app);
+
+// error handler middleware
+app.use((error, _, res, next) => {
+  logger.info(error.stack);
+  return res.status(500).send('Something Broke!');
+});
 
 module.exports = app;
