@@ -1,4 +1,4 @@
-const usersModel = (UserModel) => {
+const usersRepository = (UserModel) => {
   const create = async (data) => {
     const user = new UserModel({ ...data });
     return user.save();
@@ -15,4 +15,4 @@ const usersModel = (UserModel) => {
   };
 };
 
-module.exports = usersModel;
+module.exports = usersRepository;
